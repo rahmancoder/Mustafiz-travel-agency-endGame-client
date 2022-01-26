@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 
@@ -6,7 +7,7 @@ const Header = () => {
         <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
             <div class="px-2 mx-2 navbar-start">
                 <span class="text-lg font-bold">
-                    daisyUI
+                    EndGame Travel
                 </span>
             </div>
             <div class="hidden px-2 mx-2 navbar-center lg:flex">
@@ -15,7 +16,7 @@ const Header = () => {
                         Home
                     </a>
                     <a class="btn btn-ghost btn-sm rounded-btn">
-                        Portfolio
+                        Travel Blog
                     </a>
                     <a class="btn btn-ghost btn-sm rounded-btn">
                         About
@@ -36,6 +37,13 @@ const Header = () => {
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                 </button>
+            </div>
+            <div class="flex-none">
+                <div class="avatar">
+                    <div class="rounded-full w-10 h-10 m-1">
+                        <img src="https://i.pravatar.cc/500?img=32" />
+                    </div>
+                </div>
             </div>
         </div>
     );
