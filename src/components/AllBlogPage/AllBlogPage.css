@@ -1,0 +1,23 @@
+
+
+.allblog-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.blog-container{
+    border-right: 1px solid lightgray;
+    margin-right: 5px;
+    margin-left: 50px;
+}
+
+.pagination{
+    margin: 30px;
+}
+.pagination button{
+    padding: 0 10px;
+    margin-right: 20px;
+}
+.pagination .selected{
+    background-color: rgb(236, 19, 19);
+    color: rgb(72, 247, 56);
+}

@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DashBoard from './components/DashBoard/DashBoard';
 import Home from './components/Home/Home';
 import AuthProvider from './Context/AuthProvider';
@@ -11,6 +12,43 @@ function App() {
 
         {/* <Home></Home> */}
         {/* <DashBoard></DashBoard> */}
+
+        <Router>
+          {/* <Header></Header> */}
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+
+
+            <Route path="/allreviews">
+              {/* <AllReviewList></AllReviewList> */}
+
+            </Route>
+
+            <Route path="/dashboard">
+              <DashBoard></DashBoard>
+            </Route>
+            {/* <PrivateRoute path="/dashboard">
+              <DashBoard></DashBoard>
+            </PrivateRoute> */}
+
+            <Route path="/login">
+              {/* <Login></Login> */}
+            </Route>
+            <Route path="/register">
+              {/* <Register></Register> */}
+            </Route>
+            <Route path="*">
+              {/* <NotFound></NotFound> */}
+            </Route>
+          </Switch>
+          {/* <Footer></Footer> */}
+
+        </Router>
 
       </AuthProvider>
     </div>
