@@ -23,6 +23,8 @@ import useAuth from '../../hooks/useAuth';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ManageAllBlogs from '../ManageAllBlogs/ManageAllBlogs';
 import MyBlogs from '../MyBlogs/MyBlogs';
+import AddNewTravel from '../AddNewTravel/AddNewTravel';
+import AdminRoute from '../AdminRoute/AdminRoute';
 
 
 const drawerWidth = 200;
@@ -78,7 +80,8 @@ function DashBoard(props) {
             } */}
 
             <LogoutIcon /> <Link to="/login"><Button onClick={logout} color="inherit">Logout</Button></Link>
-            <Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
+            {admin && <Box><Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link></Box>}
+            <Link to={`${url}/addtravel`}><Button color="inherit">Add New Travel</Button></Link>
             <Link to={`${url}/manageallblogs`}><Button color="inherit">Manage  all Blogs</Button></Link>
 
         </div>
@@ -152,15 +155,24 @@ function DashBoard(props) {
                     <Route exact path={path}>
                         {/* <DashBoard></DashBoard> */}
                     </Route>
+                    {/* <Route path={`${path}/addtravel`}>
+                        <AddNewTravel></AddNewTravel>
+                    </Route> */}
+                    <AdminRoute path={`${path}/addtravel`}>
+                        <AddNewTravel></AddNewTravel>
+                    </AdminRoute>
 
                     <Route path={`${path}/myblogs`}>
                         <MyBlogs></MyBlogs>
                     </Route>
 
 
-                    <Route path={`${path}/makeadmin`}>
+                    {/* <Route path={`${path}/makeadmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
+                    </Route> */}
+                    <AdminRoute path={`${path}/makeadmin`}>
+                        <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
 
                     {/* <Route path={`${path}/manageallblogs`}>
                         <ManageAllBlogs></ManageAllBlogs>

@@ -17,7 +17,7 @@ const Header = () => {
                         <Link className="m-2 text-decoration-none" to="/home">Home</Link>
                     </a>
                     <a class="btn btn-ghost btn-sm rounded-btn">
-                        Travel Blog
+                        <Link className="m-2 text-decoration-none" to="/travelblog">Travel Blog</Link>
                     </a>
                     <a class="btn btn-ghost btn-sm rounded-btn">
                         <Link className="m-2 text-decoration-none" to="/dashboard">DashBoard</Link>

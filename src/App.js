@@ -7,6 +7,8 @@ import AuthProvider from './Context/AuthProvider';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import NotFound from './components/NotFound/NotFound';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import TravelList from './components/TravelList/TravelList';
 
 function App() {
   return (
@@ -27,17 +29,17 @@ function App() {
             </Route>
 
 
-            <Route path="/allreviews">
-              {/* <AllReviewList></AllReviewList> */}
+            <Route path="/travelblog">
+              <TravelList></TravelList>
 
             </Route>
 
-            <Route path="/dashboard">
+            {/* <Route path="/dashboard">
               <DashBoard></DashBoard>
-            </Route>
-            {/* <PrivateRoute path="/dashboard">
+            </Route> */}
+            <PrivateRoute path="/dashboard">
               <DashBoard></DashBoard>
-            </PrivateRoute> */}
+            </PrivateRoute>
 
             <Route path="/login">
               <Login></Login>

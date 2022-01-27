@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SingleTravelList from '../SingleTravelList/SingleTravelList';
+import { NavLink } from 'react-router-dom';
+
 
 const TravelList = () => {
 
@@ -15,7 +17,11 @@ const TravelList = () => {
 
     return (
         <div className="text-center container mt-4">
-
+            <NavLink sx={{ m: 10 }}
+                style={{ textDecoration: 'none' }}
+                to="/home">
+                Home
+            </NavLink>
             <div className="text-center">
                 <h1 className="text-danger"> Choose your Travel List</h1>
                 <p>Want to Travel? Book Now!</p>
@@ -37,6 +43,7 @@ const TravelList = () => {
                 </div>
 
             </div>
+
 
         </div>
     );
