@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import TravelExperience from '../TravelExperience/TravelExperience';
+import TravelList from '../TravelList/TravelList';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             {/* <Login></Login> */}
             <TravelExperience></TravelExperience>
             {/* <AllBlogPage></AllBlogPage> */}
+            <TravelList></TravelList>
             <Footer></Footer>
         </div>
     );

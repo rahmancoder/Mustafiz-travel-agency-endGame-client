@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import AuthProvider from './Context/AuthProvider';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
               <Register></Register>
             </Route>
             <Route path="*">
-              {/* <NotFound></NotFound> */}
+              <NotFound></NotFound>
             </Route>
           </Switch>
           {/* <Footer></Footer> */}
