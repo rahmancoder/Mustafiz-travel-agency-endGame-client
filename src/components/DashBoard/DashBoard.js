@@ -17,17 +17,12 @@ import {
     useRouteMatch
 } from "react-router-dom";
 import { Button } from '@mui/material';
-import AddProducts from '../AddProducts/AddProducts';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../hooks/useAuth';
-import DashBoardHome from '../DashBoardHome/DashBoardHome';
-import AddReviews from '../AddReviews/AddReviews';
-import Payment from '../Payment/Payment';
-import MyOrders from '../MyOrders/MyOrders';
 import AdminRoute from '../AdminRoute/AdminRoute';
-
 import LogoutIcon from '@mui/icons-material/Logout';
 import ManageAllBlogs from '../ManageAllBlogs/ManageAllBlogs';
+import MyBlogs from '../MyBlogs/MyBlogs';
 
 
 const drawerWidth = 200;
@@ -66,27 +61,25 @@ function DashBoard(props) {
             <Link to={`${url}/myreview`}><Button color="inherit">Reviews</Button></Link><br /> */}
             {/* <Link to="/login"><Button onClick={logout} color="inherit">Logout</Button></Link> */}
             {/* <Link to={`${url}/addproducts`}><Button color="inherit">Add a Product</Button></Link> */}
-            {admin && <Box>
-                <Link to={`${url}/addproducts`}><Button color="inherit">Add a Product</Button></Link>
+            {/* {admin && <Box>
+
                 <Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
-                <Link to={`${url}/manageallproducts`}><Button color="inherit">Manage  all Product</Button></Link>
                 <Link to={`${url}/manageallorders`}><Button color="inherit">Manage  all Orders</Button></Link>
 
             </Box>
-            }
+            } */}
 
-            {!admin &&
+            {/* {!admin &&
                 <Box>
                     <Link to={`${url}/pay`}><Button color="inherit">Payment</Button></Link><br />
-                    <Link to={`${url}/myorders`}><Button color="inherit">My Orders</Button></Link><br />
-                    <Link to={`${url}/myreview`}><Button color="inherit">Reviews</Button></Link><br />
+                    <Link to={`${url}/myblogs`}><Button color="inherit">My Blogs</Button></Link><br />
+
                 </Box>
-            }
+            } */}
 
             <LogoutIcon /> <Link to="/login"><Button onClick={logout} color="inherit">Logout</Button></Link>
-            {/* <Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
-            <Link to={`${url}/manageallproducts`}><Button color="inherit">Manage  all Product</Button></Link>
-            <Link to={`${url}/manageallorders`}><Button color="inherit">Manage  all Orders</Button></Link> */}
+            <Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
+            <Link to={`${url}/manageallblogs`}><Button color="inherit">Manage  all Blogs</Button></Link>
 
         </div>
     );
@@ -157,44 +150,33 @@ function DashBoard(props) {
 
                 <Switch>
                     <Route exact path={path}>
-                        <DashBoardHome></DashBoardHome>
+                        {/* <DashBoard></DashBoard> */}
                     </Route>
-                    <Route path={`${path}/pay`}>
-                        <Payment></Payment>
+
+                    <Route path={`${path}/myblogs`}>
+                        <MyBlogs></MyBlogs>
                     </Route>
-                    <Route path={`${path}/myorders`}>
-                        <MyOrders></MyOrders>
-                    </Route>
-                    <Route path={`${path}/myreview`}>
-                        <AddReviews></AddReviews>
-                    </Route>
-                    {/* <Route path={`${path}/addproducts`}>
-                        <AddProducts></AddProducts>
-                    </Route>
-                    path={`${path}/makeadmin`}
+
+
                     <Route path={`${path}/makeadmin`}>
                         <MakeAdmin></MakeAdmin>
                     </Route>
-                    <Route path={`${path}/manageallproducts`}>
-                        <ManageAllProduct></ManageAllProduct>
-                    </Route>
-                    <Route path={`${path}/manageallorders`}>
-                        <ManageAllOrders></ManageAllOrders>
-                    </Route> */}
 
-                    <AdminRoute path={`${path}/addproducts`}>
-                        <AddProducts></AddProducts>
-                    </AdminRoute>
-                    path={`${path}/makeadmin`}
+                    <Route path={`${path}/manageallblogs`}>
+                        <ManageAllBlogs></ManageAllBlogs>
+                    </Route>
+
+
+                    {/* path={`${path}/makeadmin`}
                     <AdminRoute path={`${path}/makeadmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
-                    {/* <AdminRoute path={`${path}/manageallproducts`}>
+                    <AdminRoute path={`${path}/manageallproducts`}>
                         <ManageAllProduct></ManageAllProduct>
-                    </AdminRoute> */}
+                    </AdminRoute>
                     <AdminRoute path={`${path}/manageallblogs`}>
                         <ManageAllBlogs></ManageAllBlogs>
-                    </AdminRoute>
+                    </AdminRoute> */}
 
 
                     {/* <AdminRoute path={`${path}/makeadmin`}>

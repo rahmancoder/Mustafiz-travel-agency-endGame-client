@@ -1,4 +1,5 @@
 import React from 'react';
+import AllBlogPage from '../AllBlogPage/AllBlogPage';
 import Banner from '../Banner/Banner';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             {/* <Login></Login> */}
             <TravelExperience></TravelExperience>
+            <AllBlogPage></AllBlogPage>
             <Footer></Footer>
         </div>
     );
