@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DashBoard from './components/DashBoard/DashBoard';
 import Home from './components/Home/Home';
 import AuthProvider from './Context/AuthProvider';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 function App() {
   return (
@@ -37,10 +39,10 @@ function App() {
             </PrivateRoute> */}
 
             <Route path="/login">
-              {/* <Login></Login> */}
+              <Login></Login>
             </Route>
             <Route path="/register">
-              {/* <Register></Register> */}
+              <Register></Register>
             </Route>
             <Route path="*">
               {/* <NotFound></NotFound> */}

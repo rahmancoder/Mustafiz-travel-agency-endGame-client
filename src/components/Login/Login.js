@@ -2,8 +2,9 @@
 import { Container, Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { NavLink, useLocation, useHistory, Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+
 
 import loginimage from '../../images/Loginimage/Loginimage.jpg'
 
@@ -39,8 +40,11 @@ const Login = () => {
 
 
     return (
-        <div>
-            <h1 className="bg-info"> Please Login or Register </h1>
+        <div >
+
+            <Typography variant="h1" component="h2">
+                Please Login or Register
+            </Typography>
             <Container>
                 <Grid container spacing={2}>
                     <Grid item sx={{ mt: 8 }} xs={12} md={6}>
@@ -68,6 +72,11 @@ const Login = () => {
                                 to="/register">
                                 <Button variant="text">New User? Please Register</Button>
                             </NavLink>
+                            <NavLink
+                                style={{ textDecoration: 'none' }}
+                                to="/home">
+                                <Button variant="text">Back to Home?</Button>
+                            </NavLink>
                             {isLoading && <CircularProgress />}
                             {user?.email && <Alert severity="success">Login successfully!</Alert>}
                             {authError && <Alert severity="error">{authError}</Alert>}
@@ -79,6 +88,7 @@ const Login = () => {
                         <img style={{ width: '100%' }} src={loginimage} alt="" />
                     </Grid>
                 </Grid>
+
             </Container>
         </div>
     );

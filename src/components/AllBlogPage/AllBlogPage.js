@@ -11,7 +11,7 @@ const AllBlogPage = () => {
     const [displayBlogs, setDisplayBlogs] = useState([]);
     const size = 10;
     useEffect(() => {
-        fetch(`http://localhost:5000/products?page=${page}&&size=${size}`)
+        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setAllblog(data.allblogs);
@@ -27,7 +27,7 @@ const AllBlogPage = () => {
             <div className="allblog-container">
                 <div className="blog-container">
                     {
-                        displayBlogs.map(allblog => <SingleBlog
+                        displayBlogs.map(allblogs => <SingleBlog
                             key={allblogs.key}
                             allblogs={allblogs}
 

@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -13,16 +14,16 @@ const Header = () => {
             <div class="hidden px-2 mx-2 navbar-center lg:flex">
                 <div class="flex items-stretch">
                     <a class="btn btn-ghost btn-sm rounded-btn">
-                        Home
+                        <Link className="m-2 text-decoration-none" to="/home">Home</Link>
                     </a>
                     <a class="btn btn-ghost btn-sm rounded-btn">
                         Travel Blog
                     </a>
                     <a class="btn btn-ghost btn-sm rounded-btn">
-                        About
+                        <Link className="m-2 text-decoration-none" to="/dashboard">DashBoard</Link>
                     </a>
                     <a class="btn btn-ghost btn-sm rounded-btn">
-                        Contact
+                        <Link className="m-2 text-decoration-none" to="/login">Login</Link>
                     </a>
                 </div>
             </div>

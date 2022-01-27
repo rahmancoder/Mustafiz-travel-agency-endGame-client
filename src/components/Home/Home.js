@@ -13,7 +13,7 @@ const Home = () => {
             <Banner></Banner>
             {/* <Login></Login> */}
             <TravelExperience></TravelExperience>
-            <AllBlogPage></AllBlogPage>
+            {/* <AllBlogPage></AllBlogPage> */}
             <Footer></Footer>
         </div>
     );

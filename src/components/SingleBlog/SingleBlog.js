@@ -3,7 +3,7 @@ import Rating from 'react-rating';
 const SingleBlog = (props) => {
 
 
-    const { name, img, seller, price, stock, star } = props.product;
+    const { name, img, seller, price, stock, star } = props.allblogs;
     return (
         <div className="blog">
             <div>

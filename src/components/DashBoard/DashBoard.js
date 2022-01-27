@@ -19,7 +19,7 @@ import {
 import { Button } from '@mui/material';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../hooks/useAuth';
-import AdminRoute from '../AdminRoute/AdminRoute';
+// import AdminRoute from '../AdminRoute/AdminRoute';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ManageAllBlogs from '../ManageAllBlogs/ManageAllBlogs';
 import MyBlogs from '../MyBlogs/MyBlogs';
@@ -162,9 +162,9 @@ function DashBoard(props) {
                         <MakeAdmin></MakeAdmin>
                     </Route>
 
-                    <Route path={`${path}/manageallblogs`}>
+                    {/* <Route path={`${path}/manageallblogs`}>
                         <ManageAllBlogs></ManageAllBlogs>
-                    </Route>
+                    </Route> */}
 
 
                     {/* path={`${path}/makeadmin`}
