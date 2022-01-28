@@ -6,6 +6,28 @@ import { NavLink } from 'react-router-dom';
 const TravelList = () => {
 
     const [travellist, setAlltravellist] = useState([]);
+
+    // const [allblogs, setAllblog] = useState([]);
+
+    // const [page, setPage] = useState(0);
+    // const [pageCount, setPageCount] = useState(0);
+    // // products to be rendered on the UI
+    // const [displayBlogs, setDisplayBlogs] = useState([]);
+    // const size = 10;
+    // useEffect(() => {
+    //     // fetch(`https://frightening-spell-88460.herokuapp.com/travel?page=${page}&&size=${size}`)
+    //     fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAllblog(data.allblogs);
+    //             setDisplayBlogs(data.allblogs);
+    //             const count = data.count;
+    //             const pageNumber = Math.ceil(count / size);
+    //             setPageCount(pageNumber);
+    //         });
+    // }, [page]);
+
+
     useEffect(() => {
         // fetch('http://localhost:5000/travel')
         fetch('https://frightening-spell-88460.herokuapp.com/travel')
@@ -14,6 +36,8 @@ const TravelList = () => {
             .then(data => setAlltravellist(data));
 
     }, [])
+
+
 
     return (
         <div className="text-center container mt-4">
@@ -41,6 +65,16 @@ const TravelList = () => {
                     }
 
                 </div>
+                {/* <div className="pagination">
+                        {
+                            [...Array(pageCount).keys()]
+                                .map(number => <button
+                                    className={number === page ? 'selected' : ''}
+                                    key={number}
+                                    onClick={() => setPage(number)}
+                                >{number + 1}</button>)
+                        }
+                    </div> */}
 
             </div>
 

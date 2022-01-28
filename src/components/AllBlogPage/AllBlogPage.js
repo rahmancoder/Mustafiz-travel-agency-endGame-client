@@ -2,20 +2,22 @@ import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import SingleBlog from '../SingleBlog/SingleBlog';
 
+import './AllBlogPage.css';
+
 const AllBlogPage = () => {
-    const [allblogs, setAllblog] = useState([]);
+    const [allblog, setAllblog] = useState([]);
 
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
     // products to be rendered on the UI
     const [displayBlogs, setDisplayBlogs] = useState([]);
-    const size = 10;
+    const size = 1;
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        fetch(`http://localhost:5000/allblog?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
-                setAllblog(data.allblogs);
-                setDisplayBlogs(data.allblogs);
+                setAllblog(data.allblog);
+                setDisplayBlogs(data.allblog);
                 const count = data.count;
                 const pageNumber = Math.ceil(count / size);
                 setPageCount(pageNumber);
@@ -27,9 +29,9 @@ const AllBlogPage = () => {
             <div className="allblog-container">
                 <div className="blog-container">
                     {
-                        displayBlogs.map(allblogs => <SingleBlog
-                            key={allblogs.key}
-                            allblogs={allblogs}
+                        displayBlogs.map(blogs => <SingleBlog
+                            key={blogs.key}
+                            blogs={blogs}
 
                         >
                         </SingleBlog>)

@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
+    const { user, logout } = useAuth();
     return (
         <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
             <div class="px-2 mx-2 navbar-start">
@@ -23,7 +25,14 @@ const Header = () => {
                         <Link className="m-2 text-decoration-none" to="/dashboard">DashBoard</Link>
                     </a>
                     <a class="btn btn-ghost btn-sm rounded-btn">
-                        <Link className="m-2 text-decoration-none" to="/login">Login</Link>
+                        {/* <Link className="m-2 text-decoration-none" to="/login">Login</Link> */}
+                        {user.email && <span style={{ color: 'white' }}>{user.displayName} </span>}</a>
+                    <a class="btn btn-ghost btn-sm rounded-btn">
+                        {
+                            user.email ?
+                                <button className='px-2 mx-2' onClick={logout}>log out</button>
+                                :
+                                <NavLink to="/login">Login</NavLink>}
                     </a>
                 </div>
             </div>
@@ -42,7 +51,9 @@ const Header = () => {
             <div class="flex-none">
                 <div class="avatar">
                     <div class="rounded-full w-10 h-10 m-1">
-                        <img src="https://i.pravatar.cc/500?img=32" />
+                        {user.email ?
+                            <img src={user.displayPicture} />
+                            : <img src="https://i.pravatar.cc/500?img=32" />}
                     </div>
                 </div>
             </div>

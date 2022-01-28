@@ -1,9 +1,10 @@
 import React from 'react';
 import Rating from 'react-rating';
+import './SingleBlog.css';
 const SingleBlog = (props) => {
 
 
-    const { name, img, seller, price, stock, star } = props.allblogs;
+    const { name, img, seller, price, stock, star } = props.blogs;
     return (
         <div className="blog">
             <div>
