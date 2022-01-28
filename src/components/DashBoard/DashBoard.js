@@ -25,6 +25,7 @@ import ManageAllBlogs from '../ManageAllBlogs/ManageAllBlogs';
 import MyBlogs from '../MyBlogs/MyBlogs';
 import AddNewTravel from '../AddNewTravel/AddNewTravel';
 import AdminRoute from '../AdminRoute/AdminRoute';
+import AddTravelBlog from '../AddTravelBlog/AddTravelBlog';
 
 
 const drawerWidth = 200;
@@ -79,10 +80,11 @@ function DashBoard(props) {
                 </Box>
             } */}
 
-            <LogoutIcon /> <Link to="/login"><Button onClick={logout} color="inherit">Logout</Button></Link>
+            <Link to={`${url}/addblog`}><Button color="inherit">Add Travel Blog</Button></Link>
             {admin && <Box><Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link></Box>}
             <Link to={`${url}/addtravel`}><Button color="inherit">Add New Travel</Button></Link>
             <Link to={`${url}/manageallblogs`}><Button color="inherit">Manage  all Blogs</Button></Link>
+            <Link to="/login"><Button onClick={logout} color="inherit">Logout</Button></Link> <LogoutIcon />
 
         </div>
     );
@@ -158,6 +160,11 @@ function DashBoard(props) {
                     {/* <Route path={`${path}/addtravel`}>
                         <AddNewTravel></AddNewTravel>
                     </Route> */}
+
+                    <Route path={`${path}/addblog`}>
+                        <AddTravelBlog></AddTravelBlog>
+                    </Route>
+
                     <AdminRoute path={`${path}/addtravel`}>
                         <AddNewTravel></AddNewTravel>
                     </AdminRoute>

@@ -36,7 +36,7 @@ const AddNewTravel = () => {
                     <input style={{ height: '5vh' }} type="number" {...register("travel_cost")} placeholder="Travel Cost" />
                     <input style={{ height: '5vh' }} {...register("picture")} placeholder="Destination image url" />
                     <input style={{ height: '5vh' }} type="number"{...register("index")} placeholder="Destination image url" defaultValue="10" />
-                    <input style={{ height: '5vh' }} {...register("status")} placeholder="Destination image url" defaultValue="pending" />
+                    {/* <input style={{ height: '5vh' }} {...register("status")} placeholder="Destination image url" defaultValue="pending" /> */}
                     <input type="submit" />
                 </form>
 
