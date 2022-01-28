@@ -82,8 +82,8 @@ function DashBoard(props) {
 
             <Link to={`${url}/addblog`}><Button color="inherit">Add Travel Blog</Button></Link>
             {admin && <Box><Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link></Box>}
-            <Link to={`${url}/addtravel`}><Button color="inherit">Add New Travel</Button></Link>
-            <Link to={`${url}/manageallblogs`}><Button color="inherit">Manage  all Blogs</Button></Link>
+            {admin && <Box><Link to={`${url}/addtravel`}><Button color="inherit">Add New Travel</Button></Link></Box>}
+            {admin && <Box><Link to={`${url}/manageallblogs`}><Button color="inherit">Manage  all Blogs</Button></Link></Box>}
             <Link to="/login"><Button onClick={logout} color="inherit">Logout</Button></Link> <LogoutIcon />
 
         </div>
@@ -184,6 +184,9 @@ function DashBoard(props) {
                     {/* <Route path={`${path}/manageallblogs`}>
                         <ManageAllBlogs></ManageAllBlogs>
                     </Route> */}
+                    <AdminRoute path={`${path}/manageallblogs`}>
+                        <ManageAllBlogs></ManageAllBlogs>
+                    </AdminRoute>
 
 
                     {/* path={`${path}/makeadmin`}
